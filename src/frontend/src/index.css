@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.956 0.008 222;
+    --foreground: 0.145 0.025 255;
+    --card: 1 0 0;
+    --card-foreground: 0.145 0.025 255;
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0.025 255;
+    --primary: 0.565 0.185 252;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.945 0.012 248;
+    --secondary-foreground: 0.145 0.025 255;
+    --muted: 0.94 0.008 240;
+    --muted-foreground: 0.556 0.016 248;
+    --accent: 0.93 0.02 250;
+    --accent-foreground: 0.565 0.185 252;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.922 0.006 248;
+    --input: 0.922 0.006 248;
+    --ring: 0.565 0.185 252;
+    --chart-1: 0.565 0.185 252;
+    --chart-2: 0.68 0.16 162;
+    --chart-3: 0.72 0.18 48;
+    --chart-4: 0.65 0.22 308;
+    --chart-5: 0.62 0.21 22;
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.145 0.025 255;
+    --sidebar-primary: 0.565 0.185 252;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.945 0.012 248;
+    --sidebar-accent-foreground: 0.145 0.025 255;
+    --sidebar-border: 0.922 0.006 248;
+    --sidebar-ring: 0.565 0.185 252;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+/* Flip card styles */
+.flip-card {
+  perspective: 1000px;
+}
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  inset: 0;
+}
